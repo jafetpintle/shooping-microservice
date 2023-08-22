@@ -1,7 +1,7 @@
 package japy.shoopingmicroservice.controller;
 
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import japy.shoopingmicroservice.Client.StockClient;
 import japy.shoopingmicroservice.persistence.dto.OrderDto;
 import japy.shoopingmicroservice.service.OrderService;
@@ -24,7 +24,7 @@ public class ShoppingController {
     }
 
     @PostMapping("/order")
-    @HystrixCommand(fallbackMethod = "fallbackToStockService")
+   // @HystrixCommand(fallbackMethod = "fallbackToStockService")
     public String saveOrder(@RequestBody OrderDto orderDto){
         boolean inStock = orderDto.getOrderItems().stream()
                 .allMatch(orderItem -> stockClient.stockAvaible(orderItem.getCode()));

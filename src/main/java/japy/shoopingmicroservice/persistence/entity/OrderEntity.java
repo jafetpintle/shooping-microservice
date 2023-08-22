@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
+@Table(name = "book_order")
 @Setter
 @Getter
 @NoArgsConstructor
